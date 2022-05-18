@@ -1,0 +1,36 @@
+<div class="content">
+  <?php View::content() ?> 
+  <h3> Listado de abogados</h3>
+
+<style>
+table,th{
+border: 1px solid #000000;
+    }
+</style>
+
+<table border-collapse: separate; WIDTH="500">
+
+<strong>
+<tr>
+  <th> idAbogados </th>
+  <th> Nombre  </th>
+   <th>Opciones </th>
+ </tr>
+</strong>
+
+<?php foreach($listar->items as $item) : ?>  
+<tr>
+  <th><?=$item->idAbogados ?> </th>
+  <th> <?= $item->Nombre?></th>
+  <th> <?= Html::linkAction("editar/$item->idAbogados/", ' Editar | ') ?> 
+   <?= Html::linkAction("eliminar/$item->idAbogados/", ' Eliminar |') ?>  
+   <?= Html::linkAction("ver/$item->idAbogados/", ' Ver ') ?>
+   </th>
+ </tr>
+  <?php endforeach ?>
+
+  </table>
+
+  <?php if($listar->prev) echo Html::linkAction("index/$listar->prev/", '<< Anterior |') ?> 
+  <?php if($listar->next) echo Html::linkAction("index/$listar->next/", 'Proximo >>') ?> 
+</div>

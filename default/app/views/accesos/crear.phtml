@@ -1,0 +1,10 @@
+<?php View::content() ?>
+<h2>Agregue un nuevo registro</h2>
+<?= Form::open(); ?>
+      
+     <label>Nombre
+      <?= Form::text('accesos.Nombre') ?></label>
+
+      <?= Form::submit('agregar') ?>
+
+<?= Form::close();?>
