@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue una nueva ciudad</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('bancos.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('bancos.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

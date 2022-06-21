@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue un nuevo contador</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('contadores.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('contadores.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

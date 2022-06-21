@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue una nueva sucursal</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('sucursales.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('sucursales.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

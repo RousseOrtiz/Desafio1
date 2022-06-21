@@ -1,0 +1,7 @@
+<?php View::content() ?> 
+<h3>Editar datos<h3>
+<?= Form::open();?>
+  <label>Nombre <?= Form::text('estados.nombre') ?></label>
+    <?= Form::hidden('estados.id') ?> 
+  <?= Form::submit('Actualizar') ?> 
+<?= Form::close() ?>

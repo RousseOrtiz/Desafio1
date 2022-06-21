@@ -1,59 +1,73 @@
 <?php
-class AccesosController extends AppController {
-    public function index()
-    {
-        
-    }
+class AccesosController extends AppController{
 
-    public function listar($page =1)
-    {
-        $this->lista = (new Accesos)->getdatos($page);
-    }
-    public function editar($idAcceso){
-        $editar= new Accesos();
-             if (Input::hasPost('accesos')){
 
-                if($editar->update(Input::post('accesos'))){
-                    Flash::valid('OE');
-                    return Redirect::to();
-                }
-                Flash::error('OF');
-                return;
-             }
-
-             $this->accesos = $editar->find_by_idAcceso((int) $idAcceso);
-    }
-
-    public function crear()
-    {
-        if (Input::hasPost('Accesos')){
-            $crear = new Accesos(Input::post('Accesos'));
-            if ($crear->crear()){
-                Flash::valid('Opercion Exitosa');
-                Input::delete();
-                return;
-            }
-            Flash::error('Opercion Fallida');
-        }
-    }
-
-    public function eliminar($idAcceso){
+public function index(){
     
-        if ((new Acceso)->delete((int) $idAcceso)) {
+    }
+
+public function listar($page = 1){
+    
+      $this->listar = (new Accesos)->getdatos($page);    
+}
+
+public function editar($id){
+
+    $editar = new Accesos();
+ 
+        //se verifica si se ha enviado el formulario (submit)
+        if (Input::hasPost('accesos')) {
+ 
+            if ($editar->update(Input::post('accesos'))) {
+                 Flash::valid('Operación exitosa');
+                //enrutando por defecto al index del controller
+                return Redirect::to();
+            }
+            Flash::error('Falló Operación');
+            return;
+        }
+
+        //Aplicando la autocarga de objeto, para comenzar la edición
+        $this->accesos = $editar->find_by_id((int) $id);
+}
+
+public function crear(){
+    
+    if (Input::hasPost('accesos')) {
+    
+        $create = new Accesos(Input::post('accesos'));
+        //En caso que falle la operación de guardar
+        if ($create->create()) {
+            Flash::valid('Operación exitosa');
+            //Eliminamos el POST, si no queremos que se vean en el form
+            Input::delete();
+            return;
+        }
+
+        Flash::error('Falló Operación');
+    }
+}
+
+public function eliminar($id){
+    
+        if ((new Accesos)->delete((int) $id)) {
             Flash::valid('Operación exitosa');
         
     } else {
             Flash::error('Falló Operación');
     }
-   
+    //Flash::warning("Advertencia: No ha iniciado sesión en el sistema");
+
+    //enrutando por defecto al index del controller
     return Redirect::to();
 
     }
-    public function ver($idAcceso){
-        $veer = new Acceso();
-        $this->veer = $veer->find_by_idAcceso((int) $idAcceso);
-    
-    }
-    }
 
 
+public function ver($id){
+
+    $ver = new Accesos();
+    $this->ver = $ver->find_by_id((int) $id);
+
+}
+}

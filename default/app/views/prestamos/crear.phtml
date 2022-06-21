@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue un prestamo nuevo</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('prestamos.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('prestamos.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue un nuevo empleado</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('empleados.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('empleados.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

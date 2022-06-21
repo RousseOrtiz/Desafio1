@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue un usuario nuevo</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('usuarios.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('usuarios.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

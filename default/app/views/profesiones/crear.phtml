@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue una nueva Profesión</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('profesiones.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('profesiones.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

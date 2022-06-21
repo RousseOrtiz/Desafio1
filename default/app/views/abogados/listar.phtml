@@ -12,19 +12,17 @@ border: 1px solid #000000;
 
 <strong>
 <tr>
-  <th> idAbogados </th>
-  <th> Nombre  </th>
+  <th> ID </th>
    <th>Opciones </th>
  </tr>
 </strong>
 
 <?php foreach($listar->items as $item) : ?>  
 <tr>
-  <th><?=$item->idAbogados ?> </th>
-  <th> <?= $item->Nombre?></th>
-  <th> <?= Html::linkAction("editar/$item->idAbogados/", ' Editar | ') ?> 
-   <?= Html::linkAction("eliminar/$item->idAbogados/", ' Eliminar |') ?>  
-   <?= Html::linkAction("ver/$item->idAbogados/", ' Ver ') ?>
+  <th><?=$item->id ?> </th>
+  <th> <?= Html::linkAction("editar/$item->id/", ' Editar | ') ?> 
+   <?= Html::linkAction("eliminar/$item->id/", ' Eliminar |') ?>  
+   <?= Html::linkAction("ver/$item->id/", ' Ver ') ?>
    </th>
  </tr>
   <?php endforeach ?>

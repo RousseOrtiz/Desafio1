@@ -1,7 +1,7 @@
 <?php View::content() ?> 
 <h3>Editar datos<h3>
-<?= Form::open(); // por defecto llama a la misma url ?>
+<?= Form::open();?>
   <label>Nombre <?= Form::text('accesos.nombre') ?></label>
-    <?= Form::hidden('accesos.idAcceso') ?> 
+    <?= Form::hidden('accesos.id') ?> 
   <?= Form::submit('Actualizar') ?> 
 <?= Form::close() ?>

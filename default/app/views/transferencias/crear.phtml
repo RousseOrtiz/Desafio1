@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue una nueva Transferencia</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('transferencias.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('transferencias.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>

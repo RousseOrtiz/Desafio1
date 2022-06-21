@@ -1,0 +1,11 @@
+<?php View::content() ?>
+<h2>Agregue un nuevo automovil</h2>
+<?= Form::open(); ?>
+      
+<label>ID
+      <?= Form::text('automoviles.id') ?></label>
+      <label>Nombre:
+      <?= Form::text('automoviles.nombre') ?></label>
+
+      <?= Form::submit('Agregar') ?>
+<?= Form::close();?>
